@@ -1,0 +1,119 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20, 20 )
+
+[node name="Platforms" type="Node2D"]
+
+[node name="PlatformHorizontal" type="StaticBody2D" parent="."]
+collision_layer = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformHorizontal"]
+shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="PlatformHorizontal"]
+color = Color( 0.172549, 0.227451, 0.341176, 1 )
+polygon = PoolVector2Array( -60, -20, 60, -20, 60, 20, -60, 20 )
+
+[node name="PlatformHorizontal2" type="StaticBody2D" parent="."]
+collision_layer = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformHorizontal2"]
+shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="PlatformHorizontal2"]
+color = Color( 0.172549, 0.227451, 0.341176, 1 )
+polygon = PoolVector2Array( -60, -20, 60, -20, 60, 20, -60, 20 )
+
+[node name="PlatformVertical" type="StaticBody2D" parent="."]
+position = Vector2( 90, -40 )
+collision_layer = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformVertical"]
+shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="PlatformVertical"]
+color = Color( 0.172549, 0.227451, 0.341176, 1 )
+polygon = PoolVector2Array( -20, -60, 20, -60, 20, 60, -20, 60 )
+
+[node name="PlatformSquare" type="StaticBody2D" parent="."]
+position = Vector2( -90, 0 )
+collision_layer = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformSquare"]
+shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="PlatformSquare"]
+color = Color( 0.172549, 0.227451, 0.341176, 1 )
+polygon = PoolVector2Array( -20, -20, 20, -20, 20, 20, -20, 20 )
+
+[node name="PlatformTriangle" type="StaticBody2D" parent="."]
+position = Vector2( 140, 0 )
+collision_layer = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="PlatformTriangle"]
+color = Color( 0.172549, 0.227451, 0.341176, 1 )
+polygon = PoolVector2Array( 20, -20, 20, 20, -20, 20 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlatformTriangle"]
+polygon = PoolVector2Array( 20, -20, -20, 20, 20, 20, 20, -20 )
+
+[node name="PlatformTriangle2" type="StaticBody2D" parent="."]
+position = Vector2( 190, 0 )
+rotation = 1.57079
+collision_layer = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="PlatformTriangle2"]
+color = Color( 0.172549, 0.227451, 0.341176, 1 )
+polygon = PoolVector2Array( 20, -20, 20, 20, -20, 20 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlatformTriangle2"]
+polygon = PoolVector2Array( 20, -20, -20, 20, 20, 20, 20, -20 )
+
+[node name="PlatformTriangle3" type="StaticBody2D" parent="."]
+position = Vector2( 190, 50 )
+rotation = 3.14159
+collision_layer = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="PlatformTriangle3"]
+color = Color( 0.172549, 0.227451, 0.341176, 1 )
+polygon = PoolVector2Array( 20, -20, 20, 20, -20, 20 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlatformTriangle3"]
+polygon = PoolVector2Array( 20, -20, -20, 20, 20, 20, 20, -20 )
+
+[node name="PlatformTriangle4" type="StaticBody2D" parent="."]
+position = Vector2( 140, 50 )
+rotation = 4.71238
+collision_layer = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="PlatformTriangle4"]
+color = Color( 0.172549, 0.227451, 0.341176, 1 )
+polygon = PoolVector2Array( 20, -20, 20, 20, -20, 20 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlatformTriangle4"]
+polygon = PoolVector2Array( 20, -20, -20, 20, 20, 20, 20, -20 )
