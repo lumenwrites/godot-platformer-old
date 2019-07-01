@@ -6,6 +6,7 @@ const DECELERATION = 5000
 const GRAVITY = 5000
 const UP = Vector2(0,-1)
 const JUMP_SPEED = 500
+const JUMP_ACCELERATION = 120
 const JUMP_BOOST = 2 # Multiplier for jump pads
 const DASH_SPEED = 1400
 var speed = 0
@@ -59,7 +60,17 @@ func decelerate(delta):
 #		velocity.x += DECELERATION*delta
 #		if velocity.x > 0: velocity.x = 0
 
-	
+# fit numbers in range
+func fit(value, oldMin, oldMax, newMin, newMax):
+    # Figure out how 'wide' each range is
+    var oldSpan = oldMax - oldMin
+    var newSpan = newMax - newMin
+
+    # Convert the left range into a 0-1 range (float)
+    var valueScaled = float(value - oldMin) / float(oldSpan)
+
+    # Convert the 0-1 range into a value in the right range.
+    return newMin + (valueScaled * newSpan)	
 	
 const JUMP_TIME = 0.5
 var jumpTimer = JUMP_TIME
@@ -69,13 +80,14 @@ func jump(delta):
 	Global.HUD.update_HUD("velocity.y " + str(velocity.y))
 	# Start jumping. Add initial velocity, and start jump timer
 	if is_on_floor() and Input.is_action_pressed("ui_jump"):
-		velocity.y = -JUMP_SPEED*2
+		velocity.y = -JUMP_SPEED
+
 		isJumping = true
 		jumpTimer = JUMP_TIME
 	
 	if isJumping:
 		# Keep moving player up, lose jump speed as timer runs out.
-		velocity.y = -JUMP_SPEED
+		velocity.y -= JUMP_ACCELERATION * fit(jumpTimer,0, JUMP_TIME, 0, 1)
 		# Increment jump timer
 		jumpTimer -= delta
 		# Stop jumping when button is released or was pressed for longer than 1 second
