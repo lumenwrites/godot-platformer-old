@@ -25,13 +25,12 @@ position = Vector2( 960, 531.403 )
 zoom = Vector2( 1, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 976.321, 540.939 )
+position = Vector2( 454.447, 422.499 )
 
 [node name="SpikesTop" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1740, 1027.95 )
 
 [node name="Coins" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Coin" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 1840, 990 )
@@ -46,7 +45,7 @@ position = Vector2( 1590, 810 )
 frame = 4
 
 [node name="Coin4" parent="Coins" instance=ExtResource( 5 )]
-position = Vector2( 200, 720 )
+position = Vector2( 270.323, 736.656 )
 frame = 4
 
 [node name="Floor" type="StaticBody2D" parent="."]
@@ -64,7 +63,7 @@ color = Color( 0.105882, 0.262745, 0.376471, 1 )
 polygon = PoolVector2Array( 930, -20, 930, 20, -930, 20, -930, -20 )
 
 [node name="Floor2" type="StaticBody2D" parent="."]
-position = Vector2( 960, 640 )
+position = Vector2( 659.367, 641.67 )
 collision_layer = 2
 __meta__ = {
 "_edit_group_": true
@@ -186,4 +185,4 @@ position = Vector2( 680, 930 )
 position = Vector2( 1310, 620 )
 
 [node name="Exit" parent="." instance=ExtResource( 10 )]
-position = Vector2( 540, 620 )
+position = Vector2( 171.727, 773.601 )
