@@ -34,19 +34,19 @@ position = Vector2( 1740, 1027.95 )
 
 [node name="Coin" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 1840, 990 )
-frame = 5
+frame = 0
 
 [node name="Coin2" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 1470, 810 )
-frame = 0
+frame = 1
 
 [node name="Coin3" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 1590, 810 )
-frame = 0
+frame = 1
 
 [node name="Coin4" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 270.323, 736.656 )
-frame = 0
+frame = 1
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2( 960, 1060 )

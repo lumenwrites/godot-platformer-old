@@ -75,13 +75,19 @@ func fit(value, oldMin, oldMax, newMin, newMax):
 const JUMP_TIME = 0.5
 var jumpTimer = JUMP_TIME
 var isJumping = false
+var canJump = false
+const JUMP_MAX_AIRBORNE_TIME = 0.2
+var on_air_time = 0
 
 func jump(delta):
 	Global.HUD.update_HUD("velocity.y " + str(velocity.y))
+	
+	# Coyote time is when you press jump slightly too late after falling off a ledge, but you jump anyway. 
+	# I can jump when Im on the floor, or if I just fell off the ledge, so Im in air just for a bit and falling down
+	canJump = is_on_floor() or (on_air_time < JUMP_MAX_AIRBORNE_TIME and velocity.y > 0)
 	# Start jumping. Add initial velocity, and start jump timer
-	if is_on_floor() and Input.is_action_pressed("ui_jump"):
+	if canJump  and Input.is_action_pressed("ui_jump"):
 		velocity.y = -JUMP_SPEED
-
 		isJumping = true
 		jumpTimer = JUMP_TIME
 	
@@ -124,8 +130,10 @@ func fall(delta):
 		# recharge dash
 		canDash = true
 		velocity.y = 0
+		on_air_time = 0
 	else:
 		# move_and_slide already multiplies thingamabob by delta
 		# this multiplies by delta second time, because that's how acceleration works
 		velocity.y += GRAVITY * delta
+		on_air_time += delta
 	
